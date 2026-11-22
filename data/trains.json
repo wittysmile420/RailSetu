@@ -1,0 +1,36 @@
+{
+  "trains": [
+    {
+      "trainId": "RS101",
+      "trainName": "Rajdhani Express",
+      "trainNumber": "12951",
+      "source": "Mumbai",
+      "destination": "New Delhi",
+      "departureTime": "17:00",
+      "arrivalTime": "08:35",
+      "runDay": "Daily",
+      "fare": 2450,
+      "cancellationChargePercentage": 20,
+      "coaches": [
+        {"coach": "A1", "type": "AC", "seats": 60},
+        {"coach": "S1", "type": "Sleeper", "seats": 60}
+      ]
+    },
+    {
+      "trainId": "RS205",
+      "trainName": "Deccan Queen",
+      "trainNumber": "12123",
+      "source": "Mumbai",
+      "destination": "Pune",
+      "departureTime": "07:10",
+      "arrivalTime": "10:25",
+      "runDay": "Daily",
+      "fare": 850,
+      "cancellationChargePercentage": 20,
+      "coaches": [
+        {"coach": "C1", "type": "AC", "seats": 40},
+        {"coach": "D1", "type": "General", "seats": 40}
+      ]
+    }
+  ]
+}

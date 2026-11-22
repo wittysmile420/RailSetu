@@ -1,0 +1,15 @@
+build/
+build-*/
+*.exe
+*.o
+*.obj
+*.tmp
+*.bak
+railsetu.state
+railsetu.state.*
+railsetu.log
+railsetu_stress.log
+logs/
+data/*.state
+benchmark/*.csv
+benchmark/*.txt

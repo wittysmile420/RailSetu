@@ -1,0 +1,9 @@
+flowchart LR
+  CLI[Terminal CLI] --> BM[BookingManager]
+  BM --> M[(Mutex)]
+  BM --> CV[(Condition Variable)]
+  BM --> WL[(Priority Waitlists)]
+  BM --> L[Logger]
+  BM --> P[Atomic Persistence]
+  Stress[Stress Workers] --> S[Counting Semaphore]
+  S --> BM
