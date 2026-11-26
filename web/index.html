@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071725">
+  <title>RailSetu — Operations Console</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="#" data-view-link="overview" aria-label="RailSetu home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 42 42" fill="none"><path d="M8 28.5V12.8c0-2.2 1.8-4 4-4h18c2.2 0 4 1.8 4 4v15.7c0 2.2-1.8 4-4 4H12c-2.2 0-4-1.8-4-4Z" stroke="currentColor" stroke-width="2.6"/><path d="M12.5 15h17M13 25.5h16M15 33l-4 4m16-4 4 4M15 19.5h.1m11.8 0h.1" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+        </span>
+        <span class="brand-copy"><b>railsetu</b><small>RAIL OPERATIONS</small></span>
+      </a>
+
+      <div class="workspace-switch">
+        <span class="workspace-dot"></span>
+        <span><small>WORKSPACE</small><b>Central Control</b></span>
+        <span class="switch-chevron">⌄</span>
+      </div>
+
+      <p class="nav-label">WORKSPACE</p>
+      <nav class="nav-list">
+        <button class="nav-item active" data-view="overview"><span class="nav-icon">◫</span>Overview</button>
+        <button class="nav-item" data-view="reservations"><span class="nav-icon">＋</span>Reservations <span class="nav-count" id="nav-wait-count">0</span></button>
+        <button class="nav-item" data-view="bookings"><span class="nav-icon">▤</span>Bookings</button>
+        <button class="nav-item" data-view="trains"><span class="nav-icon">⇄</span>Train network</button>
+        <button class="nav-item" data-view="concurrency"><span class="nav-icon">⌘</span>Concurrency lab <span class="nav-live">LIVE</span></button>
+        <button class="nav-item" data-view="analytics"><span class="nav-icon">▥</span>Analytics</button>
+      </nav>
+
+      <p class="nav-label nav-label-lower">SYSTEM</p>
+      <nav class="nav-list">
+        <button class="nav-item" data-view="activity"><span class="nav-icon">◷</span>Activity log</button>
+        <button class="nav-item" data-action="export"><span class="nav-icon">⇧</span>Export reports</button>
+        <button class="nav-item" data-action="reset"><span class="nav-icon">⟳</span>Reset demo data</button>
+      </nav>
+
+      <div class="sidebar-spacer"></div>
+      <div class="sync-card">
+        <div class="sync-heading"><span class="pulse-dot"></span> SYSTEM HEALTH <span>●●●</span></div>
+        <strong>All systems operational</strong>
+        <div class="sync-meter"><i></i></div>
+        <small>Local demo · synced just now</small>
+      </div>
+      <div class="profile">
+        <div class="avatar">RS</div>
+        <div class="profile-copy"><b>RailSetu Admin</b><small>Operations team</small></div>
+        <span class="icon-button profile-menu" aria-hidden="true">···</span>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>Workspace</span><b>/</b><strong id="breadcrumb-current">Overview</strong></div>
+        <div class="topbar-tools">
+          <label class="global-search"><span>⌕</span><input id="global-search" type="search" placeholder="Search PNR, passenger, train..." aria-label="Search"><kbd>⌘ K</kbd></label>
+          <button class="icon-button notification-button" aria-label="Open activity log" data-view-link="activity">♧<i></i></button>
+          <div class="top-avatar">RS</div>
+        </div>
+      </header>
+
+      <div class="page-wrap">
+        <section class="view active" id="view-overview">
+          <div class="page-heading">
+            <div><p class="eyebrow"><span class="eyebrow-line"></span> THURSDAY, NOVEMBER 26, 2026</p><h1>Good morning, Admin <span class="wave">✦</span></h1><p class="muted">Here’s what’s happening across your railway network today.</p></div>
+            <div class="heading-actions"><button class="button button-quiet" data-action="export"><span>⇧</span> Export report</button><button class="button button-primary" data-action="new-booking"><span>＋</span> New reservation</button></div>
+          </div>
+
+          <div class="hero-panel">
+            <div class="hero-copy"><div class="hero-tag"><span class="pulse-dot"></span> LIVE NETWORK STATUS</div><h2>Every journey,<br><em>beautifully connected.</em></h2><p>Real-time visibility across trains, passengers, and the systems keeping everything in motion.</p><button class="hero-link" data-view-link="trains">Explore train network <span>↗</span></button></div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+              <div class="route-node node-a"><i></i><span>DEL</span></div><div class="route-node node-b"><i></i><span>MUM</span></div><div class="route-node node-c"><i></i><span>BLR</span></div>
+              <svg class="hero-train" viewBox="0 0 460 180" fill="none"><path d="M29 139C115 139 99 72 199 72s90 67 178 67 46-58 66-58" stroke="#1BDFC0" stroke-opacity=".28" stroke-width="2" stroke-dasharray="5 8"/><path d="M74 120h266c16 0 28 12 28 27v7H65v-7c0-15 12-27 9-27Z" fill="#112D3F" stroke="#64E5D2" stroke-width="2"/><path d="M118 121v-29c0-8 6-14 14-14h175c8 0 14 6 14 14v29" fill="#17384B" stroke="#64E5D2" stroke-width="2"/><path d="M137 91h39v29h-39zm51 0h40v29h-40zm52 0h40v29h-40z" fill="#57D8C8" fill-opacity=".26" stroke="#55D9C8" stroke-opacity=".6"/><path d="M77 139h277M83 153l-13 12m276-12 13 12" stroke="#71E6D3" stroke-width="2" stroke-linecap="round"/><circle cx="112" cy="155" r="8" fill="#071725" stroke="#71E6D3" stroke-width="3"/><circle cx="320" cy="155" r="8" fill="#071725" stroke="#71E6D3" stroke-width="3"/><path d="M66 138h-14m326 0h22" stroke="#B6FFF3" stroke-width="3" stroke-linecap="round"/><circle cx="388" cy="70" r="3" fill="#C5FFF7"/><circle cx="69" cy="44" r="2" fill="#C5FFF7"/><circle cx="352" cy="28" r="2" fill="#C5FFF7"/><circle cx="218" cy="28" r="2" fill="#C5FFF7"/></svg>
+              <div class="speed-chip"><span>↗</span><div><b>124 km/h</b><small>NETWORK SPEED</small></div></div>
+            </div>
+          </div>
+
+          <div class="metric-grid" id="metric-grid"></div>
+
+          <div class="content-grid">
+            <article class="card traffic-card">
+              <div class="card-heading"><div><p class="card-kicker">NETWORK OVERVIEW</p><h3>Passenger traffic</h3></div><div class="segmented" role="group" aria-label="Chart range"><button class="selected" data-chart-range="7D">7D</button><button data-chart-range="30D">30D</button><button data-chart-range="90D">90D</button></div></div>
+              <div class="chart-summary"><strong id="traffic-total">12,840</strong><span class="trend-up">↗ 12.8%</span><small>vs. previous period</small></div>
+              <div class="traffic-chart" id="traffic-chart" aria-label="Passenger traffic chart"></div>
+              <div class="chart-legend"><span><i class="legend-teal"></i>Bookings</span><span><i class="legend-blue"></i>Previous period</span><span class="chart-axis">MON &nbsp; TUE &nbsp; WED &nbsp; THU &nbsp; FRI &nbsp; SAT &nbsp; SUN</span></div>
+            </article>
+            <article class="card departures-card">
+              <div class="card-heading"><div><p class="card-kicker">ON THE MOVE</p><h3>Upcoming departures</h3></div><button class="text-button" data-view-link="trains">View schedule ↗</button></div>
+              <div id="departure-list" class="departure-list"></div>
+            </article>
+          </div>
+
+          <div class="content-grid lower-grid">
+            <article class="card activity-card">
+              <div class="card-heading"><div><p class="card-kicker">THE LATEST</p><h3>Recent activity</h3></div><button class="text-button" data-view-link="activity">View all ↗</button></div>
+              <div id="recent-activity" class="activity-list"></div>
+            </article>
+            <article class="card capacity-card">
+              <div class="card-heading"><div><p class="card-kicker">FLEET HEALTH</p><h3>Seat occupancy</h3></div><span class="live-pill"><i></i> LIVE</span></div>
+              <div id="occupancy-list" class="occupancy-list"></div>
+              <div class="capacity-foot"><span>Network capacity utilization</span><b id="network-occupancy">—</b></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="view-reservations">
+          <div class="page-heading"><div><p class="eyebrow">BOOKING OPERATIONS</p><h1>Reservations</h1><p class="muted">Create a journey and allocate a seat in a few seconds.</p></div><button class="button button-primary" data-action="new-booking">＋ New reservation</button></div>
+          <div class="reservation-layout">
+            <article class="card reservation-form-card"><div class="card-heading"><div><p class="card-kicker">NEW JOURNEY</p><h3>Passenger details</h3></div><span class="step-badge">01 <i>/ 01</i></span></div>
+              <form id="booking-form" class="booking-form">
+                <label>Passenger full name<input name="passenger" required minlength="2" placeholder="e.g. Aanya Sharma"></label>
+                <div class="form-row"><label>Train<select name="train" id="booking-train" required></select></label><label>Passengers<select name="seats"><option value="1">1 passenger</option><option value="2">2 passengers</option><option value="3">3 passengers</option><option value="4">4 passengers</option></select></label></div>
+                <div class="form-row"><label>Priority category<select name="category"><option value="GENERAL">General</option><option value="TATKAL">Tatkal</option><option value="LADIES">Ladies</option><option value="SENIOR">Senior citizen</option></select></label><label>Seat selection<button class="button button-quiet button-small" id="seat-picker" type="button" data-action="choose-seat">Choose on seat map</button></label></div>
+                <div class="form-note"><span>✦</span><p>Priority bookings are promoted before general bookings. Equal-priority passengers keep their place in the FIFO queue.</p></div>
+                <button class="button button-primary button-wide" type="submit">Reserve seat <span>→</span></button>
+              </form>
+            </article>
+            <aside class="card trip-preview"><p class="card-kicker">YOUR JOURNEY</p><h3>Route preview</h3><div id="reservation-route" class="route-preview"></div><div class="preview-facts"><div><span>Estimated travel</span><b>6h 20m</b></div><div><span>Base fare</span><b id="preview-fare">INR 0</b></div><div><span>Seat availability</span><b id="preview-availability">—</b></div></div><div class="secure-note"><span>◈</span> Seat allocation protected by RailSetu synchronization</div></aside>
+          </div>
+          <article class="card table-card"><div class="card-heading"><div><p class="card-kicker">LATEST RECORDS</p><h3>Recent reservations</h3></div><button class="text-button" data-view-link="bookings">View all ↗</button></div><div class="table-wrap"><table><thead><tr><th>PNR / PASSENGER</th><th>TRAIN</th><th>SEAT</th><th>PRIORITY</th><th>STATUS</th><th>FARE</th></tr></thead><tbody id="reservation-table"></tbody></table></div></article>
+        </section>
+
+        <section class="view" id="view-bookings">
+          <div class="page-heading"><div><p class="eyebrow">RESERVATION RECORDS</p><h1>Bookings</h1><p class="muted">Search, review, and manage passenger bookings.</p></div><button class="button button-primary" data-action="new-booking">＋ New reservation</button></div>
+          <article class="card table-card full-table-card"><div class="table-toolbar"><label class="table-search">⌕ <input id="booking-search" type="search" placeholder="Filter by PNR or passenger..."></label><select id="booking-status-filter"><option value="ALL">All statuses</option><option>CONFIRMED</option><option>WAITLISTED</option><option>CANCELLED</option></select><select id="booking-priority-filter"><option value="ALL">All categories</option><option>GENERAL</option><option>LADIES</option><option>SENIOR</option><option>TATKAL</option></select></div><div class="table-wrap"><table><thead><tr><th>PNR / PASSENGER</th><th>TRAIN / ROUTE</th><th>COACH / SEAT</th><th>CATEGORY</th><th>STATUS</th><th>FARE / REFUND</th><th>ACTION</th></tr></thead><tbody id="all-bookings-table"></tbody></table></div><div class="table-foot" id="bookings-foot"></div></article>
+        </section>
+
+        <section class="view" id="view-trains">
+          <div class="page-heading"><div><p class="eyebrow">ROUTE CONTROL</p><h1>Train network</h1><p class="muted">Explore routes, capacity, and live seat availability.</p></div><div class="heading-actions"><button class="button button-quiet" data-view-link="analytics">Network analytics</button><button class="button button-primary" data-action="new-booking">＋ Book a seat</button></div></div>
+          <div class="network-summary" id="network-summary"></div><div class="train-grid" id="train-grid"></div>
+        </section>
+
+        <section class="view" id="view-concurrency">
+          <div class="page-heading"><div><p class="eyebrow">OPERATING SYSTEMS LAB</p><h1>Concurrency lab</h1><p class="muted">See mutual exclusion, FIFO promotion, and race prevention in action.</p></div><span class="lab-status"><i></i> SIMULATION READY</span></div>
+          <div class="lab-grid">
+            <article class="card lab-controls"><div class="card-heading"><div><p class="card-kicker">WORKLOAD CONFIGURATION</p><h3>Run a booking simulation</h3></div><span class="lab-glyph">⌘</span></div><label>Concurrent requests <div class="range-control"><input id="thread-range" type="range" min="8" max="128" step="8" value="64"><output id="thread-output">64 threads</output></div></label><label>Available seats<select id="lab-capacity"><option value="20">20 seats</option><option value="50">50 seats</option><option value="100" selected>100 seats</option></select></label><label>Synchronization mode<select id="lab-mode"><option value="safe">Safe mode · mutex protected</option><option value="unsafe">Unsafe demo · stale reads</option></select></label><button class="button button-primary button-wide" id="run-lab">▶ Run simulation</button><p class="tiny-note">The unsafe mode is an educational simulation isolated from your live bookings.</p></article>
+            <article class="card lab-results"><div class="card-heading"><div><p class="card-kicker">EXECUTION TRACE</p><h3>Thread activity</h3></div><span class="run-badge" id="lab-run-state">IDLE</span></div><div class="trace-track" id="trace-track"><div class="trace-empty"><span>⌁</span><b>Ready to run</b><small>Configure a workload to visualize thread coordination.</small></div></div><div class="lab-metrics" id="lab-metrics"><div><small>CONFIRMED</small><b>—</b></div><div><small>WAITLISTED</small><b>—</b></div><div><small>DUPLICATE SEATS</small><b>—</b></div><div><small>ELAPSED</small><b>—</b></div></div></article>
+          </div>
+          <div class="concept-grid"><article class="concept-card"><span class="concept-icon icon-lock">▣</span><div><small>MECHANISM 01</small><h3>Mutual exclusion</h3><p>One thread updates shared seat state at a time. The check and assignment form a single critical section.</p></div><div class="lock-visual"><i></i><i></i><i></i><i></i></div></article><article class="concept-card"><span class="concept-icon icon-cv">◉</span><div><small>MECHANISM 02</small><h3>Condition variable</h3><p>Waiting workers sleep until capacity changes, then re-check the predicate after waking.</p></div><div class="cv-wave"><i></i><i></i><i></i><i></i><i></i></div></article><article class="concept-card"><span class="concept-icon icon-sem">▤</span><div><small>MECHANISM 03</small><h3>Counting semaphore</h3><p>A permit counter gates worker start-up. A semaphore counts resources; a mutex guards ownership.</p></div><div class="permit-visual"><i></i><i></i><i></i><i></i><i></i></div></article></div>
+          <article class="card timeline-card"><div class="card-heading"><div><p class="card-kicker">LOCK ORDERING</p><h3>Deadlock prevention</h3></div><button class="button button-quiet button-small" id="deadlock-demo">Run safe lock demo</button></div><div class="deadlock-flow"><div><small>THREAD A</small><b>Acquire Lock 1</b><span>↓</span><b>Acquire Lock 2</b></div><div class="flow-center"><span>std::lock()</span><i>⟷</i><small>CIRCULAR WAIT PREVENTED</small></div><div><small>THREAD B</small><b>Acquire Lock 1</b><span>↓</span><b>Acquire Lock 2</b></div></div><div class="deadlock-result" id="deadlock-result">Consistent lock acquisition order prevents circular wait.</div></article>
+        </section>
+
+        <section class="view" id="view-analytics">
+          <div class="page-heading"><div><p class="eyebrow">PERFORMANCE &amp; INSIGHTS</p><h1>Network analytics</h1><p class="muted">A clear view of occupancy, demand, fairness, and throughput.</p></div><button class="button button-primary" data-action="export">⇧ Export reports</button></div>
+          <div class="metric-grid" id="analytics-metrics"></div><div class="analytics-grid"><article class="card"><div class="card-heading"><div><p class="card-kicker">CAPACITY BY ROUTE</p><h3>Occupancy overview</h3></div><span class="live-pill"><i></i> LIVE</span></div><div id="analytics-occupancy"></div></article><article class="card"><div class="card-heading"><div><p class="card-kicker">DEMAND MIX</p><h3>Booking categories</h3></div></div><div class="donut-wrap"><div class="donut-chart"><div><b id="donut-total">0</b><small>BOOKINGS</small></div></div><div class="donut-legend" id="donut-legend"></div></div></article></div><article class="card chart-card"><div class="card-heading"><div><p class="card-kicker">FAIRNESS CHECK</p><h3>Priority policy</h3></div></div><div id="priority-chart"></div></article>
+        </section>
+
+        <section class="view" id="view-activity">
+          <div class="page-heading"><div><p class="eyebrow">SYSTEM OBSERVABILITY</p><h1>Activity log</h1><p class="muted">A transparent event stream for booking and synchronization activity.</p></div><button class="button button-quiet" data-action="export">⇧ Export log</button></div>
+          <article class="card activity-page-card"><div class="table-toolbar"><div class="log-stream-status"><i></i> STREAMING LOCAL EVENTS</div><select id="activity-filter"><option value="ALL">All events</option><option>BOOKING</option><option>WAITLIST</option><option>PROMOTE</option><option>CANCEL</option><option>SYSTEM</option></select></div><div id="full-activity" class="full-activity"></div></article>
+        </section>
+
+        <footer class="page-footer"><span>© 2026 RailSetu Operations</span><span><i></i> Local demo mode <b>·</b> C++17 synchronization model</span><span>Built for journeys that matter <b>✦</b></span></footer>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+  <dialog class="confirm-dialog" id="confirm-dialog"><form method="dialog"><div class="dialog-icon">!</div><h3 id="dialog-title">Confirm action</h3><p id="dialog-message">Are you sure?</p><div class="dialog-actions"><button class="button button-quiet" value="cancel">Keep it</button><button class="button button-danger" id="dialog-confirm" value="confirm">Confirm</button></div></form></dialog>
+  <script src="app.js"></script>
+</body>
+</html>

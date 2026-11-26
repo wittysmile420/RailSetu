@@ -1,4 +1,4 @@
-#include "railsetu/ConsoleUi.hpp"
+#include "../include/railsetu/ConsoleUi.hpp"
 #include <cstdlib>
 #include <limits>
 

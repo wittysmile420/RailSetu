@@ -1,5 +1,43 @@
 # RailSetu User Manual
 
+## Browser control center
+
+The repository includes a responsive static web frontend in `web/`. It requires
+no Node modules or build step. It runs locally and stores browser-demo state in
+`localStorage`; it does not share state with the C++ executable's persistence
+file.
+
+Start it in Windows PowerShell:
+
+```powershell
+.\scripts\start-web.ps1
+```
+
+Or on Linux/macOS:
+
+```sh
+sh scripts/start-web.sh
+```
+
+Open `http://localhost:4173`. Keep the terminal running while you use the
+website; `Ctrl+C` stops the server. Python 3 must be installed.
+
+### Browser navigation and workflows
+
+| Section | Explore |
+|---|---|
+| Overview | Network metrics, passenger traffic, upcoming departures, occupancy, and latest activity |
+| Reservations | Create a browser-demo booking, choose category/seat count, and see a ticket confirmation |
+| Bookings | Search/filter records; cancel confirmed or waitlisted bookings |
+| Train network | Browse route cards and open each train's coach seat map |
+| Concurrency lab | Compare safe and unsafe simulated requests and inspect thread traces |
+| Analytics | Compare route occupancy, passenger categories, and priority tiers |
+| Activity log | Filter local events by booking, waitlist, cancellation, or system activity |
+
+Use the **Export reports** action to download a bookings CSV, occupancy SVG,
+HTML report, and Markdown snapshot. **Reset demo data** restores only browser
+storage and never deletes C++ state.
+
 ## 1. Starting the application
 
 Run from the workspace root.

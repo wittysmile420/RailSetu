@@ -1,4 +1,4 @@
-#include "railsetu/Semaphore.hpp"
+#include "../include/railsetu/Semaphore.hpp"
 #include <cassert>
 #include <thread>
 

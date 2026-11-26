@@ -1,4 +1,4 @@
-#include "railsetu/Logger.hpp"
+#include "../include/railsetu/Logger.hpp"
 #include <fstream>
 #include <filesystem>
 #include <chrono>

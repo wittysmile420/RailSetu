@@ -352,7 +352,45 @@ reports/architecture.mmd
 Open HTML in a browser. The latency SVG is explicitly illustrative; it does not
 represent stored stress timing per sample.
 
-## 19. Source evidence table
+## 19. Browser control center
+
+The static browser experience is served locally and has no package installation
+or external service dependency. It stores its own demo state in the browser's
+`localStorage`; that data is intentionally separate from the C++ runtime state
+file and is not an HTTP API connection to the C++ process.
+
+Windows PowerShell:
+
+```powershell
+.\scripts\start-web.ps1
+```
+
+Linux/macOS:
+
+```sh
+sh scripts/start-web.sh
+```
+
+Open `http://localhost:4173`, then explore:
+
+1. **Overview**: network KPIs, traffic chart, departures, activity, and
+   per-train occupancy meters.
+2. **Reservations**: select a train, passenger category, and seat count; submit
+   to allocate a unique seat or enter the waitlist.
+3. **Bookings**: filter by passenger/PNR, status, and priority; cancel a booking
+   and confirm the refund/promotion toast.
+4. **Train network**: open a train card and inspect its seat map; select a free
+   seat to carry that exact selection into the reservation form.
+5. **Concurrency lab**: choose safe/unsafe simulation and run the visual trace.
+6. **Analytics**: inspect category distribution and priority ranking.
+7. **Activity log**: filter browser-local events.
+8. **Export reports**: download CSV booking data, occupancy SVG, HTML report,
+   and a Markdown snapshot.
+
+`Reset demo data` asks for confirmation and restores the browser sample dataset.
+It does not delete or alter C++ state files.
+
+## 20. Source evidence table
 
 | Claim | Source |
 |---|---|
@@ -369,7 +407,7 @@ represent stored stress timing per sample.
 | Stress | `src/stress.cpp` |
 | UI | `src/main.cpp`, `src/ConsoleUi.cpp` |
 
-## 20. Suggested viva sequence
+## 21. Suggested viva sequence
 
 1. show clean build and CTest;
 2. explain mutex and critical section;

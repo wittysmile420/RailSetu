@@ -105,6 +105,30 @@ ctest --test-dir build --output-on-failure
 
 ## Run
 
+### Browser experience
+
+RailSetu now includes a responsive browser-based control center in `web/`.
+It is a dependency-free frontend with local browser storage; it runs separately
+from the C++ command-line executable and does not currently call the C++ process
+or share its state file.
+
+Windows:
+
+```powershell
+.\scripts\start-web.ps1
+```
+
+Linux/macOS:
+
+```sh
+sh scripts/start-web.sh
+```
+
+Then open `http://localhost:4173`. To stop the local static server, press
+`Ctrl+C`. The browser UI supports interactive reservations, seat selection,
+waitlist promotion, booking cancellation/refunds, filters, concurrency
+simulation, activity history, and local report downloads.
+
 ### Windows, current MinGW build
 
 ```powershell
